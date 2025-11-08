@@ -1,6 +1,8 @@
+import Posts from "./components/Posts.jsx";
+
 function App() {
   return (
-    <div>test</div>
+    <Posts />
   )
 }
 
