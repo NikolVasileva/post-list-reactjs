@@ -1,3 +1,5 @@
+import "./CreatePostModal.module.css";
+
 export default function CreatePostModal() {
     return (
         <form>
