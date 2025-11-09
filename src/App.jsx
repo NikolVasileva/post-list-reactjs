@@ -1,8 +1,12 @@
+import CreatePostModal from "./components/CreatePostModal.jsx";
 import Posts from "./components/Posts.jsx";
 
 function App() {
   return (
-    <Posts />
+    <div>
+      <Posts />
+      <CreatePostModal />
+    </div>
   )
 }
 
