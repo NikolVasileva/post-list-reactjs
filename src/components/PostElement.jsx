@@ -1,8 +1,11 @@
 import styles from "./PostElement.module.css";
 
 export default function PostElement({
+    id,
     title,
-    body
+    body,
+    onDeleteClick,
+    onCloseClick
 }) {
     return (
         <article className={styles.post}>
@@ -12,8 +15,8 @@ export default function PostElement({
             <p className={styles.postBody}>
                 {body}
             </p>
-            <button className="btn edit-btn" title="Edit" >Edit</button>
-            <button className="btn delete-btn" title="Delete">Delete</button>
+            <button className="btn edit-btn" title="Edit" onClick={onCloseClick}>Edit</button>
+            <button className="btn delete-btn" title="Delete" onClick={() => onDeleteClick(id)}>Delete</button>
         </article>
     );
 }

@@ -4,8 +4,7 @@ import Posts from "./components/Posts.jsx";
 
 function App() {
 
-  // const [, setRefresh] = useState([]);
-
+  const [refresh, setRefresh] = useState([]);
   const [posts, setPosts] = useState([])
 
   useEffect(() => {
@@ -14,7 +13,12 @@ function App() {
       .then(data => {
           setPosts(Object.values(data))
       })
-  }, [])
+  }, [refresh])
+
+  const forcePostRefresh = () => {
+    setRefresh(state => !state)
+  }
+  
 
   const addPostSubmitHandler = (event) => {
     event.preventDefault();
@@ -40,7 +44,9 @@ function App() {
   
   return (
     <div>
-      <Posts posts={posts} />
+      <Posts posts={posts}
+      forcePostRefresh={forcePostRefresh} 
+      />
       <CreatePostModal 
       onSubmit={addPostSubmitHandler}
       />
