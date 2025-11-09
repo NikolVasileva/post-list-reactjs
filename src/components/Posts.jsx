@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
 import PostElement from "./PostElement.jsx";
 
-export default function Posts() {
-
-    const [posts, setPosts] = useState([])
-
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-        .then(response => response.json())
-        .then(data => {
-            setPosts(Object.values(data))
-        })
-    }, [])
+export default function Posts({
+    posts
+}) {
 
     return(
         <div>
-            {posts.map(post => <PostElement 
+             {posts.map(post => <PostElement 
             key={post.id}
             id={post.id}
             title={post.title}

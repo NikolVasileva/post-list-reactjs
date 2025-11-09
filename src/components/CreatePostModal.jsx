@@ -1,8 +1,11 @@
 import "./CreatePostModal.module.css";
 
-export default function CreatePostModal() {
+export default function CreatePostModal({
+    onSubmit
+
+}) {
     return (
-        <form>
+        <form onSubmit={onSubmit}>
             <label htmlFor="title">Заглавие</label>
             <input type="text" id="title" name="title" />
 
