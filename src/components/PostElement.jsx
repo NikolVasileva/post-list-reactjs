@@ -12,6 +12,8 @@ export default function PostElement({
             <p className={styles.postBody}>
                 {body}
             </p>
+            <button className="btn edit-btn" title="Edit" >Edit</button>
+            <button className="btn delete-btn" title="Delete">Delete</button>
         </article>
     );
 }
